@@ -1,28 +1,32 @@
 class ProjectsController < ApplicationController
-  def index
-    @projects = Project.where(params[:title])
+  skip_before_action :authenticate_user!
 
-    # @markers = @projects.geocoded.map do |project|
-    #   {
-    #     lat: Project.latitude,
-    #     lng: Project.longitude
-    #   }
+  def index
+    @projects = Project.all
+
+    @markers = @projects.geocoded.map do |project|
+      {
+        lat: Project.latitude,
+        lng: Project.longitude
+      }
     end
   end
 
   def show
     @project = Project.find(params[:id])
-    @booking = Booking.new()
+    # show status = # @new_project_request = NewProjectRequest.new()
   end
 
   def new
     @project = Project.new
+    
   end
 
   def create
     @project = Project.new(strong_params)
     @project.user_id = current_user.id
     @project.save!
+    # @new_project_request = NewProjectRequest.new( @project.user_id, @project)
     redirect_to project_path(@project)
   end
 
@@ -41,15 +45,16 @@ class ProjectsController < ApplicationController
     @project.destroy
     redirect_to users_path
 
+    # I AM HERE
     def accept
       @post = Post.find(params[:id])
-      @post.status = "Booked"
+      @post.status = "Accepted"
       @post.save
       redirect_to users_path
     end
   
     def decline
-      @post = Booking.find(params[:id])
+      @post = NewProjectRequest.find(params[:id])
       @post.status = "Declined"
       @post.save
       redirect_to users_path

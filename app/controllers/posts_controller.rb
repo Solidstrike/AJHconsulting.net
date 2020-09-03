@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.new(strong_params)
     @project = Project.find(params[:project_id])
     @post.user_id = current_user.id
-    @post.instrument = @instrument
+    @post.project = @project
     if @post.save
       redirect_to users_path
     else
@@ -23,40 +23,40 @@ class PostsController < ApplicationController
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
-    @booking = Booking.new()
+    @project = Project.find(params[:id])
+    @posts = Posts.new()
   end
 
   def new
-    @instrument = Instrument.new
+    @project = Project.new
   end
 
   def create
-    @instrument = Instrument.new(strong_params)
-    @instrument.user_id = current_user.id
-    @instrument.save!
-    redirect_to instrument_path(@instrument)
+    @project = Project.new(strong_params)
+    @project.user_id = current_user.id
+    @project.save!
+    redirect_to project_path(@project)
   end
 
   def edit
-    @instrument = Instrument.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def update
-    @instrument = Instrument.find(params[:id])
-    @instrument.update(strong_params)
-    redirect_to instrument_path(@instrument)
+    @project = Project.find(params[:id])
+    @project.update(strong_params)
+    redirect_to project_path(@project)
   end
 
   def destroy
-    @instrument = Instrument.find(params[:id])
-    @instrument.destroy
-    redirect_to users_path
+    @project = Project.find(params[:id])
+    @project.destroy
+    # redirect_to users_path
   end
 
 
   private
   def strong_params
-    params.require(:post).permit(:start_date, :end_date, :price, :status)
+    params.require(:post).permit(:content)
   end
 end
