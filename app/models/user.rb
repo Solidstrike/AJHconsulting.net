@@ -8,5 +8,11 @@ class User < ApplicationRecord
    has_many :posts
    has_one_attached :image
    has_one_attached :company_logo
+   validates :first_name, presence: true
+   validates :first_name, length: { minimum: 3 }
+   validates :last_name, presence: true
+   validates :last_name, length: { minimum: 3 }
+     
+  
   #  dependent: :destroy
 end
