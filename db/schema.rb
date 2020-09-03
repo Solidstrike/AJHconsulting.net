@@ -10,29 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_02_145420) do
+ActiveRecord::Schema.define(version: 2020_09_02_153455) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "new_project_requests", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "projects_id"
-    t.bigint "users_id"
-    t.index ["projects_id"], name: "index_new_project_requests_on_projects_id"
-    t.index ["users_id"], name: "index_new_project_requests_on_users_id"
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["project_id"], name: "index_new_project_requests_on_project_id"
+    t.index ["user_id"], name: "index_new_project_requests_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "projects_id"
-    t.bigint "users_id"
-    t.index ["projects_id"], name: "index_posts_on_projects_id"
-    t.index ["users_id"], name: "index_posts_on_users_id"
+    t.bigint "project_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["project_id"], name: "index_posts_on_project_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2020_09_02_145420) do
     t.string "image_company_logo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -65,10 +67,10 @@ ActiveRecord::Schema.define(version: 2020_09_02_145420) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id"
-    t.bigint "projects_id"
-    t.index ["projects_id"], name: "index_reviews_on_projects_id"
-    t.index ["users_id"], name: "index_reviews_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.index ["project_id"], name: "index_reviews_on_project_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,17 +88,15 @@ ActiveRecord::Schema.define(version: 2020_09_02_145420) do
     t.string "phone_number"
     t.string "profile_image"
     t.string "company_logo"
-    t.bigint "projects_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["projects_id"], name: "index_users_on_projects_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "new_project_requests", "projects", column: "projects_id"
-  add_foreign_key "new_project_requests", "users", column: "users_id"
-  add_foreign_key "posts", "projects", column: "projects_id"
-  add_foreign_key "posts", "users", column: "users_id"
-  add_foreign_key "reviews", "projects", column: "projects_id"
-  add_foreign_key "reviews", "users", column: "users_id"
-  add_foreign_key "users", "projects", column: "projects_id"
+  add_foreign_key "new_project_requests", "projects"
+  add_foreign_key "new_project_requests", "users"
+  add_foreign_key "posts", "projects"
+  add_foreign_key "posts", "users"
+  add_foreign_key "projects", "users"
+  add_foreign_key "reviews", "projects"
+  add_foreign_key "reviews", "users"
 end
