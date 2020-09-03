@@ -1,12 +1,23 @@
+@font-face {
+  font-family: 'Perpetua--Titling--Light';
+  color: whitesmoke;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgb(5, 0, 27);
+  color: whitesmoke;
+  font-family: 'Perpetua--Titling--Bold';
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  color: whitesmoke;
+  font-family: 'Perpetua--Titling--Bold';
 }
 
 .navbar-lewagon .navbar-brand img {
+  font-family: 'Perpetua--Titling--Bold';
   width: 40px;
+  color: whitesmoke;
 }
