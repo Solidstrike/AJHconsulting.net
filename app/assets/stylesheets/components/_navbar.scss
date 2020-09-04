@@ -1,12 +1,68 @@
+@font-face {
+  font-family: 'Perpetua--Titling--Light';
+  color: whitesmoke;
+}
+
 .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+  position: sticky;
+  top: 0;
+  padding: 90px 10px;
+  transition: 0.4s;
+  justify-content: center;
+  background: #001639;
+  color: whitesmoke;
+  font-size: larger;
+  padding: 10px;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  color: whitesmoke;
+  font-family: 'Perpetua--Titling--Bold';
+}
+.nav-item-left {
+  position: absolute;
+  left: 5px;
 }
 
+.navbar-brand {
+  margin: auto;
+  padding: 18px;
+}
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  font-family: 'Perpetua--Titling--Bold';
+  width: 100px;
+  color: whitesmoke;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-left-width: 7px;
+  border-right-width: 7px;
+  padding-left: 9px;
+  padding-right: 9px;
+  border-left: double;
+  border-right: double;
+  border-color: whitesmoke;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: whitesmoke;
+  justify-content: center;
+  display: inline-block;
+}
+
+li.nav-item {
+  margin: auto;
+  padding: 18px;
+  text-emphasis: bold;
+}
+
+a.nav-link {
+  border-left: double;
+  border-right: double;
+  border-color: whitesmoke;
+}
+.nav-item-right {
+  margin: auto;
+  position: absolute;
+  right: 5px;
 }

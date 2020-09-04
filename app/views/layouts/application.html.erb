@@ -4,20 +4,20 @@
     <title>AJHconsultingNet</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link href="//db.onlinewebfonts.com/c/d461c89ddda0ee0e6493f1cc55e60d4e?family=Perpetua+Titling+MT" rel="stylesheet" type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/60a72abfabeb852579f6de5afc2be918?family=Perpetua+Titling+MT" rel="stylesheet" type="text/css"/>
   </head>
-
   <body>
-   <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render 'shared/navbar' %>
+    <% unless @skip_navbar %>
+      <%= render partial: 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
-   
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
