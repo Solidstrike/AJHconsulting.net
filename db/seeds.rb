@@ -26,3 +26,6 @@ Post.create(user_id: user_1, project_id: project_4, content: 'something')
 Post.create(user_id: user_2, project_id: project_4, content: 'something back')
 
 NewProjectRequest.create(project_id: project_4, user_id: user_1)
+
+# projects = YAML.load(File.join('__dir__','lib/project.yml'))
+# byebug

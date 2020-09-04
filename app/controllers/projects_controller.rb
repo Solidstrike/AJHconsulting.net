@@ -4,12 +4,12 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
-    @markers = @projects.geocoded.map do |project|
-      {
-        lat: Project.latitude,
-        lng: Project.longitude
-      }
-    end
+    # @markers = @projects.geocoded.map do |project|
+    #   {
+    #     lat: Project.latitude,
+    #     lng: Project.longitude
+    #   }
+    # end
   end
 
   def show
@@ -64,7 +64,6 @@ class ProjectsController < ApplicationController
   private
 
   def strong_params
-    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image, :image_company_logo )
+    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image, :image_company_logo, :user_id )
   end
 end
-

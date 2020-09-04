@@ -6,6 +6,7 @@
 .navbar-lewagon {
   position: sticky;
   top: 0;
+  z-index: 10;
   padding: 90px 10px;
   transition: 0.4s;
   justify-content: center;
@@ -13,16 +14,16 @@
   color: whitesmoke;
   font-size: larger;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font: 'Perpetua--Titling--Bold';
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
   color: whitesmoke;
   font-family: 'Perpetua--Titling--Bold';
-}
-.nav-item-left {
-  position: absolute;
-  left: 5px;
 }
 
 .navbar-brand {
@@ -49,6 +50,9 @@
   justify-content: center;
   display: inline-block;
 }
+.nav-link:hover {
+  background-color: gray;
+}
 
 li.nav-item {
   margin: auto;
@@ -61,8 +65,27 @@ a.nav-link {
   border-right: double;
   border-color: whitesmoke;
 }
+
 .nav-item-right {
   margin: auto;
   position: absolute;
   right: 5px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+a.nav-link.right {
+  border-right: none;
+  border-left: none;
+}
+
+.nav-wolf {
+  margin: auto;
+  position: absolute;
+  left: 20px;
+}
+.nav-wolf img {
+  height: 10vh;
+  clip-path: circle(39%);
+  top: 50%;
+  transform: translate(0, 45%);
 }
