@@ -4,12 +4,15 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.all
 
+
+
     # @markers = @projects.geocoded.map do |project|
     #   {
     #     lat: Project.latitude,
     #     lng: Project.longitude
     #   }
     # end
+
   end
 
   def show
@@ -19,15 +22,21 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    
+
   end
 
   def create
     @project = Project.new(strong_params)
     @project.user_id = current_user.id
-    @project.save!
+
+    if @project.save!
+      flash[:notice] = 'Your project has been added'
+      redirect_to project_path(@project)
+    else
+      render :new
     # @new_project_request = NewProjectRequest.new( @project.user_id, @project)
-    redirect_to project_path(@project)
+    end
+
   end
 
   def edit
@@ -52,7 +61,7 @@ class ProjectsController < ApplicationController
       @post.save
       redirect_to users_path
     end
-  
+
     def decline
       @post = NewProjectRequest.find(params[:id])
       @post.status = "Declined"
