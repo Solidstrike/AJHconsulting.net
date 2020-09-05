@@ -22,14 +22,13 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-
   end
 
   def create
     @project = Project.new(strong_params)
     @project.user_id = current_user.id
 
-    if @project.save!
+    if @project.save
       flash[:notice] = 'Your project has been added'
       redirect_to project_path(@project)
     else
@@ -73,6 +72,6 @@ class ProjectsController < ApplicationController
   private
 
   def strong_params
-    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image, :image_company_logo, :user_id )
+    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image_company_logo, :user_id, image: [] )
   end
 end
