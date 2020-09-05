@@ -15,7 +15,7 @@ user_3 = User.create(first_name: 'sarah', last_name: 'kimly', email: "sarah@g.co
 project_1 = Project.create(user_id: user_1.id, title: 'Expansion', company: 'Eden', headline: 'international development', job_description: 'working to help a us company expand to europe', starts_at: Date.today )
 project_2 = Project.create(user_id: user_2.id, title: 'sales', company: 'alush', headline: 'web-development', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 50.days.ago)
 project_3 = Project.create(user_id: user_3.id, title: 'Marketing', company: 'marketco', headline: 'marking research and development', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 200.days.ago)
-project_4 = Project.create(user_id: user_1.id, title: 'New', company: 'lala', headline: 'Web-Dev', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 20.days.from_now)
+project_4 = Project.create(user_id: user_1.id, title: 'New', company: 'lala', headline: 'Web-Dev', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 3.years.ago)
 
 Review.create(user_id: user_1, project_id: project_1, content: 'great time was fun', rating: 4)
 Review.create(user_id: user_2, project_id: project_1, content: 'yay super good', rating: 5)
