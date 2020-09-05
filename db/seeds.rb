@@ -12,7 +12,7 @@ user_1 = User.create(first_name: 'bob', last_name: 'johnson', email: "bob@g.com"
 user_2 = User.create(first_name: 'john', last_name: 'smith', email: "smith@g.com", password: '123456')
 user_3 = User.create(first_name: 'sarah', last_name: 'kimly', email: "sarah@g.com", password: '123456')
 
-project_1 = Project.create(user_id: user_1.id, title: 'Expansion', company: 'Eden', headline: 'international development', job_description: 'working to help a us company expand to europe', starts_at: Date.today )
+project_1 = Project.create(image: 'https://res.cloudinary.com/dzgkt799y/image/upload/v1599252919/company%20logos%20and%20pics/patrik-gothe-OoafRJlfhxc-unsplash_bwucic.jpg', user_id: user_1.id, title: 'Expansion', company: 'Eden', headline: 'international development', job_description: 'working to help a us company expand to europe', starts_at: Date.today )
 project_2 = Project.create(user_id: user_2.id, title: 'sales', company: 'alush', headline: 'web-development', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 50.days.ago)
 project_3 = Project.create(user_id: user_3.id, title: 'Marketing', company: 'marketco', headline: 'marking research and development', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 200.days.ago)
 project_4 = Project.create(user_id: user_1.id, title: 'New', company: 'lala', headline: 'Web-Dev', job_description: 'lalal alal alalalala alalala la lal la ', starts_at: 20.days.from_now)
@@ -26,3 +26,6 @@ Post.create(user_id: user_1, project_id: project_4, content: 'something')
 Post.create(user_id: user_2, project_id: project_4, content: 'something back')
 
 NewProjectRequest.create(project_id: project_4, user_id: user_1)
+
+# projects = YAML.load(File.join('__dir__','lib/project.yml'))
+# byebug
