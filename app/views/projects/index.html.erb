@@ -2,7 +2,9 @@
 <div class="project_container">
   <% @projects.each do |project| %>
     <%= render 'date_project', project:project %>
-    <%= render 'card_project', project:project  %>
-    <%= render 'picture_project', project:project  %>
+    <div class="col-sm-12 project-info-pic">
+      <%= render 'card_project', project:project  %>
+      <%= render 'picture_project', project:project  %>
+    </div>
   <% end %>
 </div>
