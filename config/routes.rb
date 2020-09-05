@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   
 get 'about', to: 'pages#about' 
-get 'FAQ', to: 'pages#FAQ' 
+get 'faq', to: 'pages#faq' 
 get 'contact', to: 'pages#contact'  
 
   resources :projects do
