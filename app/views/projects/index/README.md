@@ -8,3 +8,5 @@ project.index
 modelo / 2
 if 1 picture words
 if 0 words picture
+
+<!--<%= cl_image_tag(project.image), crop: :fill %> -->
