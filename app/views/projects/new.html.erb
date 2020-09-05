@@ -1,5 +1,27 @@
-<%= simple_form_for @project, url: new_project_path, method: :post do |f| %>
+<div class="col-sm-12">
 
+<%= simple_form_for @project, url: projects_path, method: :post do |f| %>
 
-<%= f.submit "submit", class: "btn"  %>
+<%= f.input :title %>
+<%= f.input :company %>
+<%= f.input :url %>
+<%= f.input :specialty %>
+<%= f.input :employment_type %>
+<%= f.input :headline %>
+<%= f.input :company_description %>
+<%= f.input :job_description %>
+<%= f.input :starts_at %>
+<%= f.input :ends_at %>
+<%= f.input :street %>
+<%= f.input :house_number %>
+<%= f.input :house_number_additional %>
+<%= f.input :postcode %>
+<%= f.input :country %>
+<%= f.input :salary %>
+<%= f.input :image %>
+<%= f.input :image_company_logo %>
+
+<%= f.submit "submit" %>
 <% end %>
+
+</div>
