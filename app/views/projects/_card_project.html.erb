@@ -11,7 +11,11 @@
     </p>
   </div>
   <div class="project-logo">
-    <%= project.image_company_logo %>
+    <% if  project.image_company_logo.attached?%>
+      <%= project.image_company_logo %>
+    <% else  %>
+      <h1>No logo</h1>
+    <% end %>
   </div>
   <div>
     <p>
