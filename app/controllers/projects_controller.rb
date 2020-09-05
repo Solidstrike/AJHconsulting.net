@@ -72,6 +72,6 @@ class ProjectsController < ApplicationController
   private
 
   def strong_params
-    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image, :image_company_logo, :user_id )
+    params.require(:project).permit(:title, :company, :url, :specialty, :employment_type, :headline, :company_description, :job_description, :starts_at, :ends_at, :lat, :lng, :street, :house_number, :house_number_additional, :postcode, :country, :salary, :image_company_logo, :user_id, image: [] )
   end
 end
