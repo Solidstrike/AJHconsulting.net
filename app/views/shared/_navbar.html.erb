@@ -3,26 +3,26 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item-left">
         <%= link_to "#", class: "nav-wolf" do %>
-          <%=  image_tag ""  %>
+          <%=  image_tag "https://res.cloudinary.com/dzgkt799y/image/upload/v1599172823/image_rft1wr.jpg", size: "auto60%"  %>
         <% end %>
       </li>
       <li class="nav-item">
-        <%= link_to "About Us", "#", class: "nav-link" %>
+        <%= link_to "About Us", about_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Projects", "#", class: "nav-link" %>
+        <%= link_to "Projects", projects_path, class: "nav-link" %>
       </li>
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://res.cloudinary.com/dzgkt799y/image/upload/v1599167415/AJH%20logo/white_outline_vyrz1c.png" %>
+        <%= image_tag "https://res.cloudinary.com/dzgkt799y/image/upload/v1599212108/AJH%20logo/white_logov2_bfngds.png" %>
       <% end %>
       <li class="nav-item">
-        <%= link_to "FAQ", "#", class: "nav-link" %>
+        <%= link_to "FAQ", faq_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Contact Us", "#", class: "nav-link" %>
+        <%= link_to "Contact Us", contact_path, class: "nav-link" %>
       </li>
       <li class="nav-item-right">
-        <%= link_to "Partners", new_user_session_path, class: "nav-link" %>
+        <%= link_to "Partners", new_user_session_path, class: "nav-link right" %>
       </li>
     </ul>
   </div>
