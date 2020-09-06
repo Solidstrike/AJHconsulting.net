@@ -1,23 +1,25 @@
-<div class="col-md-6 project-container">
-  <div class="project-content">
-    <h2>
-      <%= project.title %>
-    </h2>
-    <p>
-      <%= project.company %>
-    </p>
-    <p>
-      <%= project.specialty %>
-    </p>
+<div class="col-md-6 project-container-info">
+  <div class="project-card">
+    <div class="col-sm-3 project-info">
+      <h2>
+        <%= project.title %>
+      </h2>
+      <p>
+        <%= project.company %>
+      </p>
+      <p>
+        <%= project.specialty %>
+      </p>
+    </div>
+    <div class="col-sm-3 project-logo">
+      <% if  project.image_company_logo.attached?%>
+        <%= project.image_company_logo %>
+      <% else  %>
+        <h1>No logo</h1>
+      <% end %>
+    </div>
   </div>
-  <div class="project-logo">
-    <% if  project.image_company_logo.attached?%>
-      <%= project.image_company_logo %>
-    <% else  %>
-      <h1>No logo</h1>
-    <% end %>
-  </div>
-  <div class="project-headline">
+  <div class="col-sm-6 project-headline">
     <p>
       <%= project.headline %>
     </p>

@@ -20,16 +20,26 @@
 .project-info-pic {
   display: flex;
   padding-right: none;
-  padding-left: none ;
+  padding-left: none;
 }
-
-.project-content {
+.project-card {
+  display: flex;
+  border: #eb6f0b;
+  border-style: dashed;
+}
+.project-info {
+  border: #eb6f0b;
+  border-style: dashed;
 }
 
 .project-logo {
+  border: #eb6f0b;
+  border-style: dashed;
 }
 
 .project-headline {
+  border: #eb6f0b;
+  border-style: dashed;
 }
 .project-img {
   background: #eb6f0b;
