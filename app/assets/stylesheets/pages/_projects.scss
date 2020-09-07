@@ -10,13 +10,12 @@
   color: whitesmoke;
   vertical-align: middle;
   font-size: x-large;
-  font-family: 'Perpetua--Titling--Bold';
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
 }
 
 .project-container {
   height: 60vh;
-  background: #a4a5a7;
 }
 .date_project {
   display: flex;
@@ -27,13 +26,19 @@
   color: whitesmoke;
   vertical-align: middle;
   font-size: x-large;
-  font-family: 'Perpetua--Titling--Bold';
+  font-family: 'Kumbh Sans', sans-serif;
   font-weight: bold;
 }
 .project-info-pic {
+  text-decoration: none;
+  color: black;
   display: flex;
-  padding-right: none;
-  padding-left: none;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+
+a:hover {
+  text-decoration: none;
 }
 .project-card {
   display: flex;
@@ -47,15 +52,13 @@
 .project-container-info {
   padding-right: none;
   padding-left: none;
-  background-color: #fcdab7;
 }
 .project-info {
   display: flex;
   border: #eb6f0b;
   border-style: dashed;
   margin: auto;
-  padding-right: none;
-  padding-left: none;
+  padding: 10px;
   height: 50%;
 }
 

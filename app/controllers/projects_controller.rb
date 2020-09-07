@@ -3,8 +3,10 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+  
+    @projects = @projects.group_by{ |x| x.starts_at.strftime('%Y')}.sort.reverse
 
-
+    @projects =  @projects.map { | key , year | [key, year.group_by { |project| project.city }]}  
 
     # @markers = @projects.geocoded.map do |project|
     #   {

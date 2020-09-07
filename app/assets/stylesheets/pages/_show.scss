@@ -1,0 +1,97 @@
+.banner-project {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  text-align: center;
+  height: 100vh;
+}
+
+.banner h1 {
+  margin: auto;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner h3 {
+  margin: auto;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: 0.7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.line-project {
+  width: 200px;
+  height: 3px;
+  background-color: #70c1eb;
+  display: inline-block;
+  margin: 25px 0;
+}
+
+.company-top {
+  display: flex;
+  height: 50vh;
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+.company-info-intro {
+  padding-top: 30px;
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: none;
+  padding-left: 40px;
+  font-size: 25px;
+  line-height: 200%;
+}
+
+.company-info {
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: none;
+  padding: 30px;
+  text-align: justify;
+}
+.company-info p {
+  font-size: 18px;
+}
+
+.company-logo {
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+
+.company-middle {
+  height: 50vh;
+  display: flex;
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+.map {
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: 0%;
+  padding-left: 0%;
+}
+
+.company-bottom {
+  height: 50vh;
+  display: flex;
+  border: #eb6f0b;
+  border-style: dashed;
+  padding-right: 0%;
+  padding-left: 0%;
+}
