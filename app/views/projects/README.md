@@ -11,5 +11,7 @@ if 0 words picture
 
 <!--<%= cl_image_tag(project.image), crop: :fill %> -->
 
+
     <!--<% @projects.group_by{ |a| a.city}.sort.each do |city, project| %>
       <%= render 'city_banner_project', city:city %> -->
+
