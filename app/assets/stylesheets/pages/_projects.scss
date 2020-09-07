@@ -1,6 +1,19 @@
 .project-gif {
 }
 
+.city_project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background: #001639;
+  color: whitesmoke;
+  vertical-align: middle;
+  font-size: x-large;
+  font-family: 'Perpetua--Titling--Bold';
+  font-weight: bold;
+}
+
 .project-container {
   height: 60vh;
   background: #a4a5a7;
@@ -26,24 +39,39 @@
   display: flex;
   border: #eb6f0b;
   border-style: dashed;
+  padding-right: none;
+  padding-left: none;
+  height: 50%;
 }
 .project-container-info {
+  padding-right: none;
+  padding-left: none;
+  background-color: #fcdab7;
 }
 .project-info {
+  display: flex;
   border: #eb6f0b;
   border-style: dashed;
+  margin: auto;
 }
 
 .project-logo {
+  display: flex;
   border: #eb6f0b;
   border-style: dashed;
+  padding-right: none;
+  padding-left: none;
 }
 
 .project-headline {
   border: #eb6f0b;
   border-style: dashed;
+  height: 50%;
+  padding: 20px;
 }
 .project-img {
   background: #eb6f0b;
   height: 60vh;
+  padding-right: none;
+  padding-left: none;
 }

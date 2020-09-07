@@ -1,1 +1,3 @@
-remove defults
+mobile
+
+banners
