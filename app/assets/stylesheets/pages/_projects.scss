@@ -39,10 +39,11 @@
   display: flex;
   border: #eb6f0b;
   border-style: dashed;
-  padding-right: none;
-  padding-left: none;
-  height: 50%;
+  display: flex;
+  border: #eb6f0b;
+  border-style: dashed;
 }
+
 .project-container-info {
   padding-right: none;
   padding-left: none;
@@ -53,6 +54,9 @@
   border: #eb6f0b;
   border-style: dashed;
   margin: auto;
+  padding-right: none;
+  padding-left: none;
+  height: 50%;
 }
 
 .project-logo {
