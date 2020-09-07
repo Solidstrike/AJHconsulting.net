@@ -1,5 +1,6 @@
 <%= render 'top' %>
 <%= render 'new_project_button' %>
+<%= render 'banner_project' %>
 <div class="project_container">
   <% @projects.group_by{ |x| x.starts_at.strftime('%Y')}.sort.reverse.each do |year, project| %>
     <%= render 'date_project', year:year %>
