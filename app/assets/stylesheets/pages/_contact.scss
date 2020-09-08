@@ -6,4 +6,21 @@
 }
 
 .form-contact {
+  padding: 20px;
+}
+
+.name-email {
+  display: flex;
+  padding-left: 0%;
+  padding-right: 0%;
+}
+
+.telephone {
+  padding-left: 5px;
+  padding-right: 0%;
+}
+
+.email {
+  padding-left: 0%;
+  padding-right: 5px;
 }

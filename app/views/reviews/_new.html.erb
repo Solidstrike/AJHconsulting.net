@@ -1,0 +1,21 @@
+<%= simple_form_for @post, url: posts_path, method: :post do |f|%>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+<div class="col-sm-12 review-main">
+  <div class="col-sm-8 review">
+    <div class="review-info">
+      <div class="review-text">
+        <%= f.input :content %>
+      </div>
+      <div class="review-name-company-rating">
+        <div class="review-rating">
+          <%= f.input :rating %>
+        </div>
+        <div class="review-name">
+        </div>
+        <div class="review-company">
+        </div>
+      </div>
+    </div>
+  </div>
