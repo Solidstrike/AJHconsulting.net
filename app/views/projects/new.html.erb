@@ -1,27 +1,70 @@
-<div class="col-sm-12">
-
-  <%= simple_form_for @project, url: projects_path, method: :post do |f| %>
-
-    <%= f.input :title %>
-    <%= f.input :company %>
-    <%= f.input :url %>
-    <%= f.input :specialty %>
-    <%= f.input :employment_type %>
-    <%= f.input :headline %>
+<%= simple_form_for @project, url: projects_path, method: :post do |f| %>
+  <%= f.error_notification %>%
+  <div class="project-header">
+    <h2>Business Project Proposal</h2>
+  </div>
+  <div class="general-info">
+    <div class="col-sm-12 title">
+      <%= f.input :title %>
+    </div>
+    <div class="col-sm-12 info-propsal-main">
+      <div class="info-left">
+        <%= f.input :company %>
+      </div>
+      <div class="info-right">
+        <%= f.input :specialty %>
+      </div>
+    </div>
+    <div class="col-sm-12 info-propsal-main">
+      <div class="info-left">
+        <%= f.input :salary, lable: "Estimated Budget" %>
+      </div>
+      <div class="info-right">
+        <%= f.input :headline %>
+      </div>
+    </div>
+    <div class="col-sm-12 info-propsal-main">
+      <div class="info-left">
+        <%= f.input :employment_type %>
+      </div>
+      <div class="info-right">
+      </div>
+    </div>
+    <div class="col-sm-12 info-propsal-main">
+      <div class="info-left">
+        <%= f.input :starts_at %>
+      </div>
+      <div class="info-right">
+        <%= f.input :ends_at %>
+      </div>
+    </div>
+    <div class="col-sm-12 info-propsal-main">
+      <div class="info-left">
+        <%= f.input :url %>
+      </div>
+      <div class="info-right">
+        <%= f.input :image_company_logo, as: :file%>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 text-area">
     <%= f.input :company_description %>
+  </div>
+  <div class="col-sm-12 text-area">
     <%= f.input :job_description %>
-    <%= f.input :starts_at %>
-    <%= f.input :ends_at %>
-    <%= f.input :street %>
-    <%= f.input :house_number %>
-    <%= f.input :house_number_additional %>
-    <%= f.input :postcode %>
-    <%= f.input :country %>
-    <%= f.input :salary %>
-    <%= f.input :image, as: :file, input_html: { multiple: true } %>
-    <%= f.input :image_company_logo, as: :file%>
-
-    <%= f.submit "submit" %>
-  <% end %>
-
-</div>
+  </div>
+  <div class="col-sm-12 info-propsal-main">
+    <div class="info-pic">
+      <%= f.input :image, as: :file, input_html: { multiple: true } %>
+    </div>
+    <div class="info-adress">
+      <%= f.input :street %>
+      <%= f.input :house_number %>
+      <%= f.input :house_number_additional %>
+      <%= f.input :postcode %>
+      <%= f.input :country %>
+      <%= f.input :city %>
+    </div>
+  </div>
+  <%= f.submit "submit" %>
+<% end %>

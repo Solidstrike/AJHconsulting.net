@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   
 get 'about', to: 'pages#about' 
 get 'faq', to: 'pages#faq' 
-get 'contact', to: 'pages#contact'  
 
   resources :projects do
     resources :new_project_requests do
@@ -18,6 +17,7 @@ get 'contact', to: 'pages#contact'
   end
   resources :reviews
   resources :posts
+  resources :contacts, only: [ :new, :create, :thanks ]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
 
