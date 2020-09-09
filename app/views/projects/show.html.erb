@@ -1,0 +1,47 @@
+<div class="col-sm-12 banner-project">
+  <h1><%= @project.company.capitalize %> </h1>
+  <h3><%= @project.city.capitalize %> </h3>
+  <div class="line-project">
+    &nbsp;
+  </div>
+  <p><%= @project.headline.capitalize %> </p>
+</div>
+<div class="col-sm-12 company-top">
+  <div class="col-sm-6 company-info-intro">
+    <p>
+      <ul style="list-style: none;">
+        <li> <strong><%= @project.title %>  </strong>
+        </li>
+        <li><%= @project.specialty %> </li>
+        <li><%= @project.employment_type %> </li>
+        <li><%= @project.starts_at %> </li>
+      </ul>
+    </p>
+  </div>
+  <div class="col-sm-6 company-logo">
+    <h1>><%= @project.image_company_logo %> </h1>
+  </div>
+</div>
+<div class="col-sm-12 company-middle">
+  <div class="col-sm-6 map">
+    <h1>MAP</h1>
+  </div>
+  <div class="col-sm-6 company-info">
+    <p><%= @project.company_description %>
+    </p>
+  </div>
+</div>
+<div class="col-sm-12 company-bottom">
+  <div class="col-sm-6 pic">
+    <h1>pic</h1>
+  </div>
+  <div class="col-sm-6 company-info">
+    <p><%= @project.job_description %>
+    </p>
+  </div>
+</div>
+<div class="reviews-main">
+  <div class="reviews-actual">
+    <h1>i am testimonials</h1>
+  </div>
+</div>

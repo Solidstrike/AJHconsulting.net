@@ -1,0 +1,50 @@
+version: "3"
+
+services:
+  app:
+    image: ach-consulting:development
+    build:
+      context: .
+      dockerfile: ./docker/development/Dockerfile
+    env_file: ./docker/development/Envfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - ./docker/database.yml/:/app/config/database.yml
+      - /app/node_modules
+      - /app/tmp
+    entrypoint: docker/entrypoint.sh
+    command: bundle exec puma -C config/puma.rb
+
+  postgres:
+    image: postgres:9.6-alpine
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - "postgres:/var/lib/postgresql/data"
+
+  test:
+    image: ach-consulting:development
+    env_file: ./docker/test/Envfile
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - /app/tmp
+      - /app/node_modules
+      - ./docker/database.yml:/app/config/database.yml
+    entrypoint: docker/entrypoint.sh
+
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - 1080:1080
+      - 1025:1025
+
+volumes:
+  postgres:

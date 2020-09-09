@@ -1,0 +1,20 @@
+<div class="col-sm-12 contact-main">
+  <div class="col-sm-7 contact-pic">
+  </div>
+  <div class="col-sm-5 form-contact">
+    <%= simple_form_for @contact, url: contacts_path, method: :post do |f| %>
+      <%= f.input :name %>
+      <div class="col-sm-12 name-email">
+        <div class="col-sm-6 email">
+          <%= f.input :email %>
+        </div>
+        <div class="col-sm-6 telephone">
+          <%= f.input :telephone %>
+        </div>
+      </div>
+      <%= f.input :subject %>
+      <%= f.input :comment %>
+      <%= f.submit "submit" %>
+    <% end %>
+  </div>
+</div>

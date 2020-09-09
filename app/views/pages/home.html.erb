@@ -1,0 +1,11 @@
+<%= render 'top_vid' %>
+<%= render 'shared/navbar' %>
+<%= render 'banner' %>
+<%= render 'banner' %>
+<%= render 'shared/review_carousel', reviews: @reviews  %>
+<script>
+  $( document ).ready(function() {
+     $( "html" ).scrollTop( 0 );
+  });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>

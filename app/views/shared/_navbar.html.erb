@@ -1,0 +1,29 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item-left">
+        <%= link_to root_path, class: "nav-wolf" do %>
+          <%=  image_tag "https://res.cloudinary.com/dzgkt799y/image/upload/v1599172823/image_rft1wr.jpg", size: "auto60%"  %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "About Us", about_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Projects", projects_path, class: "nav-link" %>
+      </li>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "https://res.cloudinary.com/dzgkt799y/image/upload/v1599212108/AJH%20logo/white_logov2_bfngds.png" %>
+      <% end %>
+      <li class="nav-item">
+        <%= link_to "FAQ", faq_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Contact Us",  new_contact_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item-right">
+        <%= link_to "Partners", new_user_session_path, class: "nav-link right" %>
+      </li>
+    </ul>
+  </div>
+</div>

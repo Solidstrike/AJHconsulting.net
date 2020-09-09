@@ -1,0 +1,16 @@
+<div class="col-sm-12 main-movie">
+  <div class="video-text">
+    <div id="typed-strings">
+      <p>Typed.js is a <strong>JavaScript</strong> library.</p>
+      <p>It <em>types</em> out sentences.</p>
+    </div>
+    <span id="typed"></span>
+  </div>
+  <%= cl_video_tag("Addison_xzxj89", class: "videoInsert", loop: true, autoplay: true, poster: true, muted: true,
+  fallback_content: "Your browser does not support HTML5 video tags" )  %>
+</div>
+<script>
+  var typed = new Typed('#typed', {
+    stringsElement: '#typed-strings'
+  });
+</script>

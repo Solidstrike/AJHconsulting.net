@@ -1,0 +1,10 @@
+<div class="col-md-6 project-im project-img">
+  <% if project.image.present? %>
+    <% project.image.each do |image|  %>
+    <%= cl_image_tag image.key, crop: :fill %>
+    <% end  %>
+  <% else  %>
+   <h1> Picture</h1>
+  <% end %>
+</div>
+

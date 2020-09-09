@@ -1,0 +1,26 @@
+<%= render 'top' %>
+<%= render 'new_project_button' %>
+<%= render 'banner_project' %>
+<div class="project_container">
+  <% @projects.each do |year, project_by_year| %>
+    <%= render 'date_project', year:year %>
+    <% project_by_year.each do |city, project_by_city|  %>
+      <%= render 'city_project', city:city %>
+      <% project_by_city.each_with_index do | info, index|  %>
+        <%= link_to project_path(info) do %>
+          <% if index.even? %>
+            <div class="project-info-pic">
+              <%= render 'card_project', project:info  %>
+              <%= render 'picture_project', project:info  %>
+            </div>
+          <% else %>
+            <div class="project-info-pic">
+              <%= render 'picture_project', project:info  %>
+              <%= render 'card_project', project:info  %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
