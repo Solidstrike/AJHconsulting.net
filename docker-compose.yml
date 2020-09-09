@@ -40,5 +40,11 @@ services:
       - ./docker/database.yml:/app/config/database.yml
     entrypoint: docker/entrypoint.sh
 
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - 1080:1080
+      - 1025:1025
+
 volumes:
   postgres:
