@@ -23,7 +23,7 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Active Storage variant
+# Use Active Staorage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -35,6 +35,9 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'country_select'
+
+gem 'rails_admin'
+
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
 
@@ -52,6 +55,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'annotate_models'
 end
 
 group :test do

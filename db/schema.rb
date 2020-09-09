@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_093815) do
+ActiveRecord::Schema.define(version: 2020_09_09_130941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,12 +36,49 @@ ActiveRecord::Schema.define(version: 2020_09_08_093815) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "admins", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "telephone"
     t.string "subject"
     t.text "comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "invoces", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "number"
+    t.date "billing_date"
+    t.date "payment_date"
+    t.integer "tax"
+    t.float "total"
+    t.string "your_references"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_invoces_on_user_id"
+  end
+
+  create_table "invoice_fileds", force: :cascade do |t|
+    t.daterange "date_range"
+    t.text "description"
+    t.float "hours"
+    t.float "rate"
+    t.float "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -121,11 +158,13 @@ ActiveRecord::Schema.define(version: 2020_09_08_093815) do
     t.string "phone_number"
     t.string "profile_image"
     t.string "company_logo"
+    t.boolean "is_admin"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "invoces", "users"
   add_foreign_key "new_project_requests", "projects"
   add_foreign_key "new_project_requests", "users"
   add_foreign_key "posts", "projects"

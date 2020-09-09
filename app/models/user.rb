@@ -9,5 +9,6 @@ class User < ApplicationRecord
    has_one_attached :image
    has_one_attached :company_logo
    validates :first_name, presence: true
-   validates :last_name, presence: true     
+   validates :last_name, presence: true 
+  
 end
