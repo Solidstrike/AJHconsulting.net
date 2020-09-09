@@ -1,22 +1,109 @@
-.project-header {
-  color: rgb(128, 122, 122);
+.input.body {
+  width: 95%;
+}
+.all-new-project {
+  padding: 0%;
+}
+.all-new-project label {
+  height: 60px;
+  width: 200px;
+  padding: 0%;
+  color: white;
+
+  font-weight: 700;
+}
+.all-new-project input {
 }
 
-.general-info {
+.project-header {
+  color: rgb(128, 122, 122);
+  padding: 20px;
+  padding-left: 50px;
+}
+
+.general-info .form-group {
+  width: 100%;
+}
+
+.general-info .form-group .form-control {
+  height: 100%;
+  flex-grow: 1;
+}
+
+.general-info .form-group .d-flex {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.general-info .form-group .d-flex input {
+  margin: 0 !important;
+}
+
+.general-info label {
+  display: flex;
+  justify-content: right;
+  padding: 0%;
 }
 
 .title {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
+}
+
+.title label {
+  background-color: rgb(45, 45, 45);
 }
 
 .info-propsal-main {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
 }
+.info-propsal-main label {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
+  justify-content: right;
+  background-color: darkgray;
+}
+
 .info-left {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
 }
 .info-right {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
 }
 .text-area {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
 }
 .info-pic {
+  border: #eb6f0b;
+  border-style: dashed;
+
+  justify-content: right;
 }
 .info-adress {
+  border-color: red;
+  border-style: dashed;
+  border: 2px;
+  justify-content: right;
+}
+
+.headline {
+  border: #eb6f0b;
+  border-style: dashed;
+  display: flex;
+  padding: 0%;
 }
