@@ -20,7 +20,7 @@
 # Foreign Keys
 #
 #  fk_rails_...  (invoice_id => invoices.id)
-#
+#O
 class InvoiceField < ApplicationRecord
   belongs_to :invoice
 

@@ -1,7 +1,6 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
-  skip_before_action :authenticate_user!
   # GET /invoices
   # GET /invoices.json
   def index
@@ -15,6 +14,12 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   # GET /invoices/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: @invoice.number   # Excluding ".pdf" extension.
+      end
+    end
   end
 
   # GET /invoices/new
