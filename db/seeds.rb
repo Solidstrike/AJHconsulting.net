@@ -29,4 +29,14 @@ NewProjectRequest.create(project_id: project_4, user_id: user_1)
 
 # projects = YAML.load(File.join('__dir__','lib/project.yml'))
 # byebug
-Admin.create(email: 'mail@example.com', first_name: 'Addison', last_name: 'Holbrook', password: 'password', password_confirmation: 'password')
+
+
+# adminw
+User.create(
+  email: 'mail@example.com',
+  first_name: 'Addison',
+  last_name: 'Holbrook',
+  password: 'password',
+  password_confirmation: 'password',
+  is_admin: true
+)

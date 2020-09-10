@@ -76,13 +76,12 @@ a.nav-link.right {
 }
 
 .nav-wolf {
-  margin: auto;
+  display: block;
   position: absolute;
   left: 20px;
+  top: 70px;
 }
 .nav-wolf img {
   height: 10vh;
   clip-path: circle(39%);
-  top: 50%;
-  transform: translate(0, 45%);
 }

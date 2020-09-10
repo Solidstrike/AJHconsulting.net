@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :invoices
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
-  devise_for :admins
+
   root to: 'pages#home'
   match 'users' => 'users#show', via: :get
 

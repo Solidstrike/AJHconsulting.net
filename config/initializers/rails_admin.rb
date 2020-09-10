@@ -3,10 +3,15 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   # == Devise ==
-  config.authenticate_with do
-    warden.authenticate! scope: :admin
+  config.authorize_with do |controller|
+    unless current_user && current_user.admin?
+      if current_user
+        redirect_to :back
+      else
+        redirect_to new_user_session_path, error: "Access Denied"
+      end
+    end
   end
-  config.current_user_method(&:current_admin)
 
   ## == CancanCan ==
   # config.authorize_with :cancancan
