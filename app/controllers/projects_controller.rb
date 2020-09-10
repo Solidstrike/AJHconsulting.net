@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     @projects = @projects.group_by{ |x| x.starts_at.strftime('%Y')}.sort.reverse
 
     @projects =  @projects.map { | key , year | [key, year.group_by { |project| project.city }]}  
-
+    @reviews = Review.all
     # @markers = @projects.geocoded.map do |project|
     #   {
     #     lat: Project.latitude,
@@ -19,6 +19,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @reviews = Review.all
     # show status = # @new_project_request = NewProjectRequest.new()
   end
 

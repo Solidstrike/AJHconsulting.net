@@ -5,11 +5,11 @@
         <% @reviews.each_with_index do | review, index|  %>
           <div class=" carousel-item <% if index == 0 %> active <% end %>">
             <div class="d-block w-100 container-carousel" alt="First slide">
-              <%= cl_image_tag("graybox_mrnhie.png", crop: :fill) %>
+              <img src="" alt="">
               <div class="carousel-caption d-none d-md-block">
                 <h4><%= review.content %> </h4>
-                <p><%#= review.user.first_name %> </p>
-                <p> <%#= review.user.company %></p>
+                <p><%= review.user.first_name %> </p>
+                <p> <%= review.user.company %></p>
               </div>
             </div>
           </div>

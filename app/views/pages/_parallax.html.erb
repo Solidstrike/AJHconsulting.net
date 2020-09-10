@@ -1,0 +1,25 @@
+<div class="col-sm-12 parawin">
+  <div class="parallax-window parallax-1" >
+  </div>
+  <section>
+    <div class="container" >
+      <%= render 'banner' %>
+    </div>
+  </section>
+  <div class="parallax-window parallax-2" >
+  </div>
+</div>
+<script>
+  $( document ).ready(function() {
+   $('.parallax-1').parallax({
+     imageSrc: "<%= cloudinary_url("photo-1599480460897-1b9e90fdd7d8_xzyzgu.jpg") %>",
+     speed: 0.1
+     });
+  
+     $('.parallax-2').parallax({
+   imageSrc: "<%= cloudinary_url("photo-1485344684417-d3e4bce08ac3_sjioye.jpg") %>",
+   speed: 0.1
+   });
+  
+     });
+</script>
